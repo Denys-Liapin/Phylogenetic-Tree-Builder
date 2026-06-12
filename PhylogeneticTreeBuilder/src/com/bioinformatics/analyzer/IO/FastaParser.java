@@ -1,32 +1,28 @@
 package com.bioinformatics.analyzer.IO;
-import com.bioinformatics.analyzer.model.FastaRecord;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class FastaParser {
+    private String inputFileName = "file.txt";
+    ArrayList<String> DNA_header = new ArrayList<>();
+    ArrayList<String> DNA_sequence = new ArrayList<>();
 
-    public List<FastaRecord> parse(String inputFileName) throws IOException {
-        List<FastaRecord> records = new ArrayList<>();
+    public void parse(String inputFileName) {
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFileName))) {
             String line;
-            StringBuilder thisDNA = new StringBuilder();
-            String currentHeader = null;
+            StringBuilder ThisDNA = new StringBuilder();
+            int i = 0;
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith(">")) {
-                    if (currentHeader != null) {
-                        records.add(new FastaRecord(currentHeader, thisDNA.toString()));
-                        thisDNA.setLength(0);
-                    }
-                    currentHeader = line;
+                    DNA_header.add(line);
+                    i++;
                 } else {
-                    thisDNA.append(line);
+                    ThisDNA.append(line);
+                    DNA_sequence.add(i, ThisDNA);
                 }
             }
-            if (currentHeader != null) {
-                records.add(new FastaRecord(currentHeader, thisDNA.toString()));
-            }
+
         }
-        return records;
     }
+
 }
