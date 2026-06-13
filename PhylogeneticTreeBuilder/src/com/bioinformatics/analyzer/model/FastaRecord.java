@@ -16,7 +16,4 @@ public class FastaRecord {
     public String getSequence() {
         return sequence;
     }
-
-
-
 }

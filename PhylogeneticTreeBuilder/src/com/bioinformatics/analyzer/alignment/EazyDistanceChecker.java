@@ -7,9 +7,9 @@ import java.util.List;
 
 public class EazyDistanceChecker {
 
-    public KmerProfile seqReader(List<FastaRecord> records) {
-        FastaRecord thisSample = records.get(0);
-        String thisSampleSeq = thisSample.getSequence();
+    public KmerProfile seqReader(FastaRecord records) {
+        String thisSampleSeq = records.getSequence();
+        String thisSampleName = records.getHeader();
         String codon;
         int codonCount = 0;
         int startIndex = 0;
@@ -26,7 +26,7 @@ public class EazyDistanceChecker {
             endIndex++;
         }
 
-        return new KmerProfile(thisCodonAndQuantity);
+        return new KmerProfile(thisCodonAndQuantity, thisSampleName);
 
     }
 }
