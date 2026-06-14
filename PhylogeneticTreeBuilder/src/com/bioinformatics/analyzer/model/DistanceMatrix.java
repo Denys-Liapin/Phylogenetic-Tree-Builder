@@ -9,4 +9,10 @@ public class DistanceMatrix {
         this.sampleNames = sampleNames;
         this.matrix = matrix;
     }
+    public List<String> getSampleNames(){
+        return sampleNames;
+    }
+    public double[][] getMatrix(){
+        return matrix;
+    }
 }
