@@ -1,5 +1,4 @@
 package com.bioinformatics.analyzer.model;
-
 import java.util.HashMap;
 
 public class KmerProfile {

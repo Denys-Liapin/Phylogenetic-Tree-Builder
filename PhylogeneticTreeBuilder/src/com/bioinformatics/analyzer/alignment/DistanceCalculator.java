@@ -1,7 +1,6 @@
 package com.bioinformatics.analyzer.alignment;
 import com.bioinformatics.analyzer.model.DistanceMatrix;
 import com.bioinformatics.analyzer.model.KmerPercentProfile;
-
 import java.util.*;
 
 public class DistanceCalculator {
