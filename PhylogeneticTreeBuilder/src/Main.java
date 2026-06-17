@@ -1,6 +1,8 @@
+import com.bioinformatics.analyzer.IO.ConsoleInterface;
 
-
-
-void main() {
-
+public class Main {
+    public static void main(String[] args) {
+        ConsoleInterface menu = new ConsoleInterface();
+        menu.run();
+    }
 }

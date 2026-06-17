@@ -1,6 +1,5 @@
 package com.bioinformatics.analyzer.IO;
 import com.bioinformatics.analyzer.phylogen.NewickRecord;
-
 import java.util.Stack;
 
 public class TreeShower {

@@ -28,6 +28,12 @@ public class FastaParser {
             }
             records.add(new FastaRecord(thisHeader, ThisDNA.toString()));
         }
+        catch (FileNotFoundException e) {
+            System.out.println("Parser error: The file '" + inputFileName + "' was not found.");
+        }
+        catch (IOException e) {
+            System.out.println("Parser error: I/O mistake while reading lines: " + e.getMessage());
+        }
         return records;
     }
 
