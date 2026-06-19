@@ -47,6 +47,7 @@ public class TreeBuilder {
                     }
                 }
             }
+            oldMatrix = newMatrix;
         }
         return new NewickRecord(sampleNames.get(0) + ";");
     }

@@ -15,15 +15,20 @@ public class FastaParser {
             String thisHeader = null;
             int i = 0;
             while ((line = reader.readLine()) != null) {
-                if (line.startsWith(">")) {
+                String trimmedLine = line.trim();
+
+                if (trimmedLine.isEmpty()) {
+                    continue;
+                }
+                if (trimmedLine.startsWith(">")) {
                     if (thisHeader != null) {
                         records.add(new FastaRecord(thisHeader, ThisDNA.toString()));
                         ThisDNA.setLength(0);
                     }
-                    thisHeader = line;
+                    thisHeader = trimmedLine.replace(",", "").replace("(", "_").replace(")", "_");;
                     i++;
                 } else {
-                    ThisDNA.append(line);
+                    ThisDNA.append(trimmedLine);
                 }
             }
             records.add(new FastaRecord(thisHeader, ThisDNA.toString()));
