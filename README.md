@@ -1,13 +1,13 @@
 # Phylogenetic-Tree-Builder
 
-A Java-based bioinformatics tool for parsing multi-FASTA files, aligning DNA sequences, and generating distance matrices. Features a clean, extensible OOP architecture with custom parsers and algorithmic strategies, tested on *Camellia sinensis* cold-tolerance genes (DREB/CBF) from NCBI.
+A Java-based bioinformatics tool for parsing multi-FASTA files, performing alignment-free sequence comparison and generating distance matrices. Features a clean, extensible OOP architecture with custom parsers and algorithmic strategies, tested on *Camellia sinensis* cold-tolerance genes (DREB/CBF) from NCBI.
 
 ---
 
 ## Features
 
 * **Robust FASTA Parsing:** A custom-built, highly resilient parser that sanitizes molecular data on the fly, eliminating whitespaces, blank lines, and Newick-invalid characters from NCBI headers.
-* **K-mer Profile Generation:** Computes $k$-mer frequency profiles for highly accurate sequence composition analysis.
+* **K-mer Profile Generation:** Computes $k$-mer frequency profiles for highly accurate, alignment-free sequence composition analysis..
 * **Distance Matrix Calculation:** Builds genetic distance matrices between biological samples utilizing cosine similarity metrics.
 * **UPGMA Phylogenetic Inference:** An autonomous implementation of the Unweighted Pair Group Method with Arithmetic Mean (UPGMA) algorithm for automated, step-by-step phylogenetic tree construction.
 * **Standard Export:** Saves the final tree topology into the universally recognized **Newick format (.nwk)**, ensuring 100% compatibility with global bioinformatics suites (iTOL, MEGA, Phylo.io).
